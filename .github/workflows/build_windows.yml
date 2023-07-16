@@ -61,3 +61,8 @@ jobs:
       if: ${{ failure() }}
       run: |
         bash -x -v configure && cat config.err
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: gbsplay-win
+        path: "./gbsplay"
